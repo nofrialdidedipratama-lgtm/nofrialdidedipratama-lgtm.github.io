@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>N&F Collection</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: 'Inter', Times-New-Roman;
+
+            background-color: #f7f8fa;
+
+        }
+
+        .card {
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .shimmer-bg {
+
+            background: linear-gradient(-45deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+
+            background-size: 400% 400%;
+
+            animation: shimmer 1s infinite;
+
+        }
+
+        @keyframes shimmer {
+
+            0% {
+
+                background-position: 100% 50%;
+
+            }
+
+            100% {
+
+                background-position: 0% 50%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+ 
+
+    <!-- Header -->
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+
+            <div class="text-2xl font-bold text-gray-800">
+
+                <a href="#hero">N&F Collection</a>
+
+            </div>
+
+            <div class="flex items-center space-x-4">
+
+                <input type="text" id="search-input" placeholder="Cari produk..." class="w-48 sm:w-64 md:w-80 p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+                <button id="search-button" class="bg-purple-600 text-white p-2 rounded-md hover:bg-purple-700 transition duration-300 hidden sm:block">Cari</button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+ 
+
+    <!-- Main Content -->
+
+    <main class="container mx-auto p-4 md:p-8">
+
+ 
+
+        <!-- Hero Section -->
+
+        <section id="hero" class="bg-purple-600 text-white p-8 md:p-16 rounded-3xl text-center mb-8">
+
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Selamat Datang di N&F Collection</h1>
+
+            <p class="text-lg md:text-xl mb-6">Temukan berbagai souvenir, stiker, cetak undangan, dan lainnya untuk kebutuhan istimewa Anda.</p>
+
+            <a href="#products" class="bg-white text-purple-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition duration-300 shadow-lg">Lihat Produk</a>
+
+        </section>
+
+ 
+
+        <!-- Product Categories -->
+
+        <section class="mb-8">
+
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Kategori Produk</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                <a href="#" class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
+
+                    <span class="text-4xl">🎁</span>
+
+                    <span class="mt-2 text-sm font-medium">Souvenir</span>
+
+                </a>
+
+                <a href="#" class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
+
+                    <span class="text-4xl">🏷️</span>
+
+                    <span class="mt-2 text-sm font-medium">Stiker</span>
+
+                </a>
+
+                <a href="#" class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
+
+                    <span class="text-4xl">✉️</span>
+
+                    <span class="mt-2 text-sm font-medium">Cetak Undangan</span>
+
+                </a>
+
+                <a href="#" class="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300">
+
+                    <span class="text-4xl">🔑</span>
+
+                    <span class="mt-2 text-sm font-medium">Gantungan Kunci</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+ 
+
+        <!-- Products Section -->
+
+        <section id="products">
+
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Produk Kami</h2>
+
+            <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                <!-- Product cards will be inserted here by JavaScript -->
+
+            </div>
+
+        </section>
+
+ 
+
+    </main>
+
+ 
+
+    <!-- Contact & Footer -->
+
+    <footer class="bg-gray-800 text-white py-8">
+
+        <div class="container mx-auto px-4 text-center">
+
+            <h3 class="text-xl font-bold mb-2">Hubungi Kami</h3>
+
+            <p class="mb-4">Untuk pemesanan atau pertanyaan, silakan hubungi kami melalui WhatsApp.</p>
+
+            <a href="https://wa.me/6285213436500" class="bg-green-500 text-white font-semibold py-2 px-6 rounded-full hover:bg-green-600 transition duration-300 shadow-md">
+
+                Hubungi via WhatsApp
+
+            </a>
+
+            <p class="mt-8 text-sm text-gray-400">&copy; 2024 N&F Collection. Hak Cipta Dilindungi.</p>
+
+        </div>
+
+    </footer>
+
+ 
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const products = [
+
+                {
+
+                    name: "Souvenir Pernikahan",
+
+                    image: "https://placehold.co/400x400/94A3B8/FFFFFF?text=Souvenir+Pernikahan",
+
+                    price: "Rp 5.000",
+
+                    description: "Souvenir pernikahan elegan dengan berbagai pilihan warna dan desain.",
+
+                    link: "#"
+
+                },
+
+                {
+
+                    name: "Stiker Kustom",
+
+                    image: "https://placehold.co/400x400/94A3B8/FFFFFF?text=Stiker+Kustom",
+
+                    price: "Mulai dari Rp 500",
+
+                    description: "Stiker vinil berkualitas tinggi, tahan air, cocok untuk branding atau personal.",
+
+                    link: "#"
+
+                },
+
+                {
+
+                    name: "Undangan Digital",
+
+                    image: "https://placehold.co/400x400/94A3B8/FFFFFF?text=Undangan+Digital",
+
+                    price: "Rp 20.000",
+
+                    description: "Undangan digital interaktif dengan desain modern dan elegan.",
+
+                    link: "#"
+
+                },
+
+                {
+
+                    name: "Gantungan Kunci Akrilik",
+
+                    image: "https://placehold.co/400x400/94A3B8/FFFFFF?text=Gantungan+Kunci",
+
+                    price: "Rp 7.000",
+
+                    description: "Gantungan kunci akrilik kustom dengan desain dua sisi.",
+
+                    link: "#"
+
+                },
+
+                {
+
+                    name: "Goodie Bag Custom",
+
+                    image: "https://placehold.co/400x400/94A3B8/FFFFFF?text=Goodie+Bag+Custom",
+
+                    price: "Rp 10.000",
+
+                    description: "Goodie bag ramah lingkungan dengan cetak logo perusahaan atau acara Serta Kustomisasi  Desain Pribadi.",
+
+                    link: "#"
+
+                },
+
+                {
+
+                    name: "Cetak Mug Custom",
+
+                    image: "https://placehold.co/400x400/94A3B8/FFFFFF?text=Cetak+Mug",
+
+                    price: "Rp 35.000",
+
+                    description: "Cetak mug keramik dengan foto atau desain pribadi.",
+
+                    link: "#"
+
+                }
+
+            ];
+
+ 
+
+            const productList = document.getElementById('product-list');
+
+            const searchInput = document.getElementById('search-input');
+
+            const searchButton = document.getElementById('search-button');
+
+ 
+
+            const renderProducts = (filteredProducts) => {
+
+                productList.innerHTML = '';
+
+                if (filteredProducts.length === 0) {
+
+                    productList.innerHTML = '<p class="text-center text-gray-500 col-span-full">Maaf, produk tidak ditemukan.</p>';
+
+                    return;
+
+                }
+
+                filteredProducts.forEach(product => {
+
+                    const productCard = document.createElement('div');
+
+                    productCard.className = 'card bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center';
+
+                    productCard.innerHTML = `
+
+                        <img src="${product.image}" alt="${product.name}" class="rounded-xl w-full h-48 object-cover mb-4 shimmer-bg">
+
+                        <div class="flex-grow w-full">
+
+                            <h3 class="text-lg font-semibold mb-2 text-center sm:text-left">${product.name}</h3>
+
+                            <p class="text-purple-600 font-bold text-lg mb-2 text-center sm:text-left">${product.price}</p>
+
+                            <p class="text-sm text-gray-500 mb-4 text-center sm:text-left">${product.description}</p>
+
+                        </div>
+
+                        <a href="${product.link}" class="w-full bg-purple-600 text-white text-center py-2 px-4 rounded-full hover:bg-purple-700 transition-colors duration-300">Lihat Detail</a>
+
+                    `;
+
+                    productList.appendChild(productCard);
+
+                });
+
+            };
+
+ 
+
+            const performSearch = () => {
+
+                const query = searchInput.value.toLowerCase();
+
+                const filteredProducts = products.filter(product =>
+
+                    product.name.toLowerCase().includes(query) ||
+
+                    product.description.toLowerCase().includes(query)
+
+                );
+
+                renderProducts(filteredProducts);
+
+            };
+
+ 
+
+            // Initial render
+
+            renderProducts(products);
+
+ 
+
+            // Event listeners
+
+            searchButton.addEventListener('click', performSearch);
+
+            searchInput.addEventListener('keypress', (e) => {
+
+                if (e.key === 'Enter') {
+
+                    performSearch();
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+ 
+
+ 
